@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robô Brabo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
+</head>
+<body>
+    <div id="ganhos">
+        <img id="vermelho" src="static/imagens/V.png" alt="vermelho">
+            <p>
+                
+                <span id="perda_total">{{ perdas[0] }}</span>       
+            </p class="percent">
+            <script>
+                setInterval(function() {
+                  // Fazer uma requisição ao servidor para obter o valor atualizado de pegar_total
+                  fetch('/perdas_atualizar')
+                    .then(response => response.json())
+                    .then(data => {
+                      // Atualizar o valor do elemento com o novo valor obtido do servidor
+                      document.getElementById('perda_total').innerText = 'R$ ' + data.perdas[0];
+                    })
+                    .catch(error => {
+                      console.error('Erro ao atualizar valor: ', error);
+                    });
+                }, 1000); // 5000 ms = 5 segundos
+            </script>
+
+            <img id="preto" src="static/imagens/P.png" alt="preto">
+            <p class="percent">
+                
+                <span id="perda_totalp">{{ perdas[2] }}</span>       
+            </p>
+            <script>
+                setInterval(function() {
+                  // Fazer uma requisição ao servidor para obter o valor atualizado de pegar_total
+                  fetch('/perdas_atualizar')
+                    .then(response => response.json())
+                    .then(data => {
+                      // Atualizar o valor do elemento com o novo valor obtido do servidor
+                      document.getElementById('perda_totalp').innerText = 'R$ ' + data.perdas[2];
+                    })
+                    .catch(error => {
+                      console.error('Erro ao atualizar valor: ', error);
+                    });
+                }, 1000); // 5000 ms = 5 segundos
+            </script>
+
+            <img id="preto" src="static/imagens/P.png" alt="preto">
+            <p class="percent">
+                
+                <span id="perda_totalb">{{ perdas[1] }}</span>        
+            </p>
+            <script>
+                setInterval(function() {
+                // Fazer uma requisição ao servidor para obter o valor atualizado de pegar_total
+                fetch('/perdas_atualizar')
+                    .then(response => response.json())
+                    .then(data => {
+                    // Atualizar o valor do elemento com o novo valor obtido do servidor
+                    document.getElementById('perda_totalb').innerText = 'R$ ' + data.perdas[1];
+                    })
+                    .catch(error => {
+                    console.error('Erro ao atualizar valor: ', error);
+                    });
+                }, 1000); // 5000 ms = 5 segundos
+            </script>
+    </div>
+
+    <div id="chances">
+        <h1 class="normal">CHANCES DA JOGADA</h1>
+        <img id="preto" src="static/imagens/P.png" alt="preto">
+        <!-- {% if dados[57:60] == ['V','V','V'] %}
+                <p class="percent">{{ numero[1] }}</p>
+        {% endif %}
+        {% if dados[57:60] == ['P','P','P'] %}
+                <p class="percent">28,4%</p>
+        {% endif %} -->
+        <br>
+        <img id="vermelho" src="static/imagens/V.png" alt="vermelho">
+        <!-- {% if dados[57:60] == ['P','P','P'] %}
+                    <p class="percent">{{ numero[0] }}</p>
+        {% endif %}
+        {% if dados[57:60] == ['V','V','V'] %}
+                    <p class="percent">28,4%</p>
+        {% endif %} -->
+        <br>
+        <img id="branco" src="static/imagens/B.png" alt="branco">
+        <!-- {% if dados[57:60] == ['V','V','V'] %}
+                    <p class="percent">8,4%</p>
+        {% endif %}
+        {% if dados[57:60] == ['P','P','P'] %}
+                    <p class="percent">8,4%</p>
+
+        {% else %}
+            <p class="percent" id="randomNumber">{{ random_number }}</p>
+        {% endif %} -->
+
+        <script>
+            // Função para atualizar o número aleatório
+            function updateRandomNumber() {
+              var randomNumberElement = document.getElementById('randomNumber');
+              var randomNumber = Math.floor(Math.random() * (13.8 - 7.3) + 7.3); // Gera um número aleatório entre 7 e 13
+              var randomNumber2 = Math.floor(Math.random() * (35 - 7.3) + 7.3);
+              randomNumberElement.innerHTML = '' + randomNumber + "," + randomNumber2 + "%";
+            }
+            
+            // Atualizar o número aleatório a cada 5 segundos
+            setInterval(updateRandomNumber, 60000); // 5000 milissegundos = 5 segundos
+            </script>
+    </div>
+
+    <div id="indicada">
+        <h1> COR + INDICADA</h1>
+    </div>
+
+    <div id="quantidade">
+        <h1>QUANTIDADE DE VEZES</h1>
+        <img id="vermelho" src="static/imagens/V.png" alt="vermelho">
+        <p class="percent"><span id="valor_total">{{ pegar_total[0] }}X</span></p>
+
+        <script>
+            setInterval(function() {
+              // Fazer uma requisição ao servidor para obter o valor atualizado de pegar_total
+              fetch('/atualizar_total')
+                .then(response => response.json())
+                .then(data => {
+                  // Atualizar o valor do elemento com o novo valor obtido do servidor
+                  document.getElementById('valor_total').innerText = data.pegar_total[0] + 'X';
+                })
+                .catch(error => {
+                  console.error('Erro ao atualizar valor: ', error);
+                });
+            }, 5000); // 5000 ms = 5 segundos
+        </script>
+
+        <img id="preto" src="static/imagens/P.png" alt="preto">
+        <p class="percent"><span id="valor_total2">{{ pegar_total[1] }}X</span></p>
+
+        <script>
+            setInterval(function() {
+              // Fazer uma requisição ao servidor para obter o valor atualizado de pegar_total
+              fetch('/atualizar_total')
+                .then(response => response.json())
+                .then(data => {
+                  // Atualizar o valor do elemento com o novo valor obtido do servidor
+                  document.getElementById('valor_total2').innerText = data.pegar_total[1] + 'X';
+                })
+                .catch(error => {
+                  console.error('Erro ao atualizar valor: ', error);
+                });
+            }, 5000); // 5000 ms = 5 segundos
+        </script>
+
+        <img id="branco" src="static/imagens/B.png" alt="branco">
+        <p class="percent"><span id="valor_total3">{{ pegar_total[2] }}X</span></p>
+
+        <script>
+            setInterval(function() {
+              // Fazer uma requisição ao servidor para obter o valor atualizado de pegar_total
+              fetch('/atualizar_total')
+                .then(response => response.json())
+                .then(data => {
+                  // Atualizar o valor do elemento com o novo valor obtido do servidor
+                  document.getElementById('valor_total3').innerText = data.pegar_total[2] + 'X';
+                })
+                .catch(error => {
+                  console.error('Erro ao atualizar valor: ', error);
+                });
+            }, 5000); // 5000 ms = 5 segundos
+        </script>
+    </div>
+
+    <div id="resultados">
+        <!-- <h1 class="normal">RESULTADOS</h1>
+        {% for dado in dados %}
+            {% if dado == "V" %}
+                <img id="red" src="static/imagens/red.png" alt="red">
+            {% endif %}
+            {% if dado == "P" %}
+                <img id="black" src="static/imagens/black.png" alt="black">
+            {% endif %}
+            {% if dado == "B" %}
+                <img id="white" src="static/imagens/white.png" alt="white">
+            {% endif %}
+        {% endfor %} -->
+
+        <div id="imagens-container">
+            
+        </div>
+        
+        <script>
+            // Função para criar uma nova imagem com base na cor obtida
+            function criarImagem(cor) {
+                var imagem = document.createElement('img');
+                imagem.src = 'static/imagens/' + cor + '.png';
+                imagem.alt = cor;
+                return imagem;
+            }
+        
+            // Função para atualizar o código HTML com base nos dados obtidos
+            function atualizarHTML(dados) {
+                var imagensContainer = document.getElementById('imagens-container');
+                if (imagensContainer) {
+                    // Limpar o conteúdo atual do contêiner
+                    imagensContainer.innerHTML = '';
+        
+                    // Loop pelos dados obtidos e criar imagens correspondentes
+                    for (var i = 0; i < dados.length; i++) {
+                        var cor = dados[i];
+                        var imagem = criarImagem(cor);
+                        // Adicionar a nova imagem ao contêiner
+                        imagensContainer.appendChild(imagem);
+                    }
+                }
+            }
+        
+            // Função para obter os dados atualizados do servidor Flask
+            function obterDadosAtualizados() {
+                fetch('/atualizar_dados') // Substitua a URL com a rota correta do servidor Flask
+                    .then(response => response.json())
+                    .then(data => {
+                        // Atualizar o código HTML com base nos dados obtidos
+                        var dados = data.dados;
+                        atualizarHTML(dados);
+                    })
+                    .catch(error => {
+                        console.error('Erro ao obter dados atualizados: ', error);
+                    });
+            }
+        
+            // Iniciar a obtenção dos dados atualizados ao carregar a página
+            window.onload = function() {
+                obterDadosAtualizados();
+                // Chamar a função novamente após um intervalo de tempo
+                setInterval(obterDadosAtualizados, 5000); // 5000 ms = 5 segundos
+            }
+        </script>
+    </div>
+</body>
+</html>

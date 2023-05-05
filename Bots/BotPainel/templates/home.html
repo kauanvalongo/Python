@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PainelBot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
+    <script src="static/javascript.js" > </script>
+</head>
+<body>
+    <div id="ganhos">
+        <div class="perdas">
+            <img id="perda" src="static/imagens/V.png" alt="vermelho">
+            <p  id="perdatext">
+                
+                <span id="perda_total">{{ perdas[0] }}</span>  
+                <span id="valor_realv"></span>       
+            </p >
+        </div>
+        <div class="perdas">
+            <img id="perda" src="static/imagens/P.png" alt="preto">
+            <p  id="perdatext">
+                
+                <span id="perda_totalp">{{ perdas[2] }}</span>
+                <span id="valor_realp"></span>       
+            </p >
+        </div>
+        <div class="perdas">
+            <img id="perda" src="static/imagens/B.png" alt="branco">
+            <p  id="perdatext">
+                
+                <span id="perda_totalb">{{ perdas[1] }}</span>    
+                <span id="valor_realb"></span>     
+            </p >
+        </div>    
+    </div>
+
+    <div id="chances">
+        <h1 class="normal">CHANCES DA JOGADA</h1>
+        <img id="preto" src="static/imagens/P.png" alt="preto">
+        <p class="percent" id="porcentagemp"></p>
+        <br>
+        <img id="vermelho" src="static/imagens/V.png" alt="vermelho">
+        <p class="percent" id="porcentagemv"></p>
+        <br>
+        <img id="branco" src="static/imagens/B.png" alt="branco">
+        <p class="percent" id="porcentagemb"></p>
+
+    </div>
+
+    <div id="indicada">
+        <h1> COR + INDICADA</h1>
+        <img id="imgindicada" src="static/imagens/money.jpg" alt="">
+        <p id="pindicada"></p>
+    </div>
+
+    <div id="quantidade">
+        <h1>QUANTIDADE DE VEZES</h1>
+        <img id="valor_totali" src="static/imagens/V.png" alt="vermelho">
+        <p class="percent"><span id="valor_total">{{ pegar_total[0] }}X</span></p>
+
+        <img id="valor_total2i" src="static/imagens/P.png" alt="preto">
+        <p class="percent"><span id="valor_total2">{{ pegar_total[1] }}X</span></p>
+
+        <img id="valor_total3i" src="static/imagens/B.png" alt="branco">
+        <p class="percent"><span id="valor_total3">{{ pegar_total[2] }}X</span></p>
+   
+    </div>
+
+    <div id="resultados">
+        <h1 class="normal">RESULTADOS</h1>
+
+        <div id="imagens-container">
+            
+        </div>
+        
+    </div>
+</body>
+</html>

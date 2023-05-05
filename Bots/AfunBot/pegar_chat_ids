@@ -1,0 +1,13 @@
+para conseguir os ids dos grupos/chats veja esse vídeo 'https://www.youtube.com/watch?v=OO3a7tJEJ1I' 3:40 até 9:25
+
+https://api.telegram.org/bot5468560434:AAE11S9PQhsDHzBnrEvbT8K-IOUniPSBbY8/getUpdates
+
+
+adicione o bot a todos os 3 grupos
+
+no minuto 5:30 ele mostra quando você vai conseguir arranjar o token do bot
+
+perceba que no minuto 9:00 ele pega o id do chat, esse é o id que você deve colocar no código 
+
+os ids atualizam de acordo com o recebimento de mensagens do bot, então se quiser pegar o id do grupo em espanhol, é só mandar uma mensagem no grupo em espanhol e repitir o processo
+

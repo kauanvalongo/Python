@@ -1,0 +1,222 @@
+@charset "UTF-8";
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+
+
+
+body {
+
+    
+
+    background: url("imagens/money.jpg");
+    background-color: rgba(199, 199, 199, 0.349);
+    background-size: cover;
+    
+
+
+}
+
+div#ganhos {
+    width: 1000px;
+    height: 150px;
+    margin-top: 20px !important;
+    background-color: white;
+    border-radius: 20px 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -240%);
+}
+
+img {
+    height: 50px;
+    width: 90px;
+    margin: auto;
+}
+
+div#chances {
+    width: 300px;
+    height: 225px;
+    background-color: white;
+    border-radius: 30px 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-165%, -75%);
+}
+
+div#indicada {
+    
+    width: 300px;
+    height: 225px;
+    background-color: white;
+    border-radius: 30px 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -75%);
+}
+
+div#quantidade {
+    
+    width: 300px;
+    height: 225px;
+    background-color: white ;
+    border-radius: 30px 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(65%, -75%);
+}
+
+div#resultados {
+    width: 1000px;
+    height: 285px;
+    margin-top: 20px !important;
+    margin-bottom: 20px;
+    background-color: white;
+    border-radius: 20px 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+}
+
+h1 {
+    margin: auto;
+    margin-top: 25px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+
+p#valor_total {
+    height: 45px;
+    width: 45px;
+    margin-top: 10px;
+    margin-left: 20px;
+    border-radius: 10px ;
+}
+
+p#valor_total2 {
+   
+    margin-top: 10px;
+    margin-left: 20px;
+    border-radius: 10px ;
+}
+
+p#valor_total3 {
+   
+    margin-top: 10px;
+    margin-left: 20px;
+    
+}
+
+
+.valor_totali2 {
+    height: 80px;
+    width: 45px;
+    margin-top: 70px;
+    margin-left: 19px;
+    border-radius: 10px ;
+}
+
+.valor_total2i2 {
+    height: 115px;
+    width: 45px;
+    margin-top: 10px;
+    margin-left: 20px;
+    border-radius: 10px ;
+}
+
+
+.valor_totali {
+    height: 115px;
+    width: 45px;
+    margin-top: 35px;
+    margin-left: 19px;
+    border-radius: 10px ;
+}
+
+.valor_total2i {
+    height: 80px;
+    width: 45px;
+    margin-top: 10px;
+    margin-left: 20px;
+    border-radius: 10px ;
+}
+
+img#valor_total3i {
+    height: 30px;
+    width: 45px;
+    margin-top: 10px;
+    margin-left: 20px;
+    border-radius: 10px ;
+}
+
+
+img {
+    height: 45px;
+    width: 45px;
+    margin-top: 10px;
+    margin-left: 20px;
+    border-radius: 10px ;
+}
+
+p.percent {
+    display: inline-block;
+   
+}
+
+#imgindicada {
+    display: none;
+    width: 150px;
+    height: 150px;
+    margin-left: 75px;
+    margin-top: 5px;
+  }
+
+#pindicada {
+    margin: -3px 0px 0px 132px;
+}
+
+
+img#perda {
+    height: 70px;
+    width: 80px;
+    margin-left: 50px;
+    
+}
+
+.positivo {
+    color: rgb(8, 207, 8);
+}
+.negativo {
+    color: rgb(228, 33, 20);
+}
+
+
+
+p#perdatext {
+    display: block;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    width: 285px;
+
+
+}
+
+
+div.perdas {
+    display: inline-block;
+    height: 40px;
+    width: 70px;
+    margin: 15px 110px 10px 100px;
+    padding: 10px 10px 10px 10px;
+}

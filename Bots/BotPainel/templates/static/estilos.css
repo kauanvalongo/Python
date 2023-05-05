@@ -1,0 +1,101 @@
+@charset "UTF-8";
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+body {
+
+    background: url("static/imagens/money.jpg");
+    background-color: rgb(199, 199, 199);
+
+
+}
+
+div#ganhos {
+    width: 1000px;
+    height: 150px;
+    margin-top: 20px !important;
+    background-color: white;
+    border-radius: 20px 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -207%);
+}
+
+img {
+    height: 50px;
+    width: 90px;
+    margin: auto;
+}
+
+div#chances {
+    width: 300px;
+    height: 250px;
+    background-color: white;
+    border-radius: 30px 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-165%, -50%);
+}
+
+div#indicada {
+    
+    width: 300px;
+    height: 250px;
+    background-color: white;
+    border-radius: 30px 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+div#quantidade {
+    
+    width: 300px;
+    height: 250px;
+    background-color: white ;
+    border-radius: 30px 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(65%, -50%);
+}
+
+div#resultados {
+    width: 1000px;
+    height: 300px;
+    margin-top: 20px !important;
+    margin-bottom: 20px;
+    background-color: white;
+    border-radius: 20px 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 40%);
+}
+
+h1 {
+    margin: auto;
+    margin-top: 25px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+img {
+    height: 45px;
+    width: 45px;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+p.percent {
+    display: inline-block;
+   
+}
